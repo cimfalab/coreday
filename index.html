@@ -175,7 +175,7 @@
                         <div class="story">
                             <h2>#Why (개발 배경)</h2>
                             <h2>#Develop (구조 및 기능)</h2>
-                            <h2><strong>#Demo (물건)</strong></h2>
+                            <h2 style="color: #00ffff;">#Demo</h2>
                         </div>
                     </div>
                 </section>
@@ -340,8 +340,8 @@
                             작년에 Webida를 개발했던<br>
                             게으른 미혼 개발자가 쉽게 오픈소스 커미터가 될 수 있는 이유
                             -->
-                            <h2>#구조</h2>
-                            <h2>#기능</h2>
+                            <h2>#Structure</h2>
+                            <h2>#Features</h2>
                         </div>
                     </div>
                 </section>
@@ -373,8 +373,11 @@
                         <div class="breadcrumb">#Develop > <span class="current">Structure</span></div>
                         <div class="sl-block" style="">
                             <h2 style="margin-bottom: 0;"><strong>Structure</strong></h2>
-                            <h2 style="margin-bottom: 40px;">Extensions on Webida</h2>
-                            <img data-src="tizen_structure.png" style="margin-bottom: 20px;">
+                            <ul>
+                                <li>Client: Tizen-specific Webida plug-ins</li>
+                                <li>Server: Node.js services</li>
+                            </ul>
+                            <img src="tizen_structure.png" style="width: 960px;">
                         </div>
                     </section>
 
@@ -457,6 +460,12 @@
                                         <li>Workspace management</li>
                                         <li>User profile</li>
                                     </ul>
+                                <li>Server</li>
+                                    <ul>
+                                        <li>Auth/ACL</li>
+                                        <li>User file system</li>
+                                        <li>Docker container</li>
+                                    </ul>
                                 <li>Server Monitoring</li>
                                 <li>DIBS Deployment</li>
                             </ul>
@@ -498,14 +507,14 @@
                         <h2>One small step</h2>
                         <!-- 수많은 릴리즈를 거치고 풍부한 기능을 갖춘 기존 Tizen IDE보다 기능은 부족합니다. 하지만 나름의 가치가 있다고 생각합니다. -->
                         <ul style="margin-bottom: 20px;" class="highlight">
-                            <li>브라우저만으로 가능한 Tizen Web App 개발 환경</li>
+                            <li>브라우저만으로 가능한 Tizen Web App 개발 환경 확보</li>
                             <!--li>앱 플랫폼으로서의 웹 기술 검증, 오픈 소스 프로젝트와의 선순환</li-->
+                            <li>Webida 레퍼런스 확보. 기여에 의한 선순환.</li>
                         </ul>
                         <h2>Next steps</h2>
                         <ul>
                             <!--li>해커톤, 교육 센터 등 공동 작업 환경에서 활용</li-->
                             <li>Native App, TV App</li>
-                            <li>UI Builder</li>
                             <li>Collaboration</li>
                             <li>Offline-enabled</li>
                             <li>IoT App</li>
@@ -554,6 +563,8 @@
                 progress: true,
                 history: true,
                 center: false,
+                //minScale: 1,
+                //maxScale: 1,
 
                 transition: 'slide', // none/fade/slide/convex/concave/zoom
 

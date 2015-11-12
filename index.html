@@ -51,7 +51,7 @@
 
         .reveal h1,
         .reveal h2 {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
         .reveal ul {
             width: 90%;
@@ -62,18 +62,22 @@
         .reveal ul + img {
             margin-top: 10px;
         }
-        .reveal .toc h2 {
-            top: 100px;
+        .reveal .toc.inter {
+            top: 120px;
         }
         .reveal .toc h2 {
             text-align: left;
-            margin-bottom: 30px;
+            margin: 30px;
+            margin-left: 80px;
             color: #e7ad52;
         }
         .reveal .story {
             text-align: left;
             margin-top: 120px;
             line-height: 2;
+        }
+        .reveal .story.right {
+            text-align: right;
         }
         .reveal div.quote {
             font-size: 75%;
@@ -181,9 +185,9 @@
                 </section>
 
                 <section>
-                    <div class="sl-block toc" style="">
+                    <div class="sl-block toc inter">
                         <h1>#Why</h1>
-                        <div class="story">
+                        <div class="story right">
                             <span class="current">중국</span>에서 Tizen 컨퍼런스가 열리던 <span class="current">일요일</span>,<br>
                             자신의 <span class="current">삼성 디바이스</span>를 가지고 해커톤에 참석하는 개발자가<br>
                             Tizen 앱을 개발할 수 없는 이유
@@ -231,27 +235,6 @@
                             <li>인트라넷에 팀 공용 개발 환경을 구축하려는 앱 개발사</li>
                             <li>삼성 기어 S2와 삼성 Smart TV를 모두 갖고 있는 취미 개발자</li>
                         </ul>
-                        <!--
-                        <table>
-                            <thead>
-                                <tr><th style="width: 20%;"></th><th></th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td rowspan="2">클라이언트 환경</td>
-                                    <td>윈도우 계정이 "설치해 볼까"인데 SDK가 깔리지 않아요.</td>
-                                </tr>
-                                <tr>
-                                    <td>Tizen 앱을 개발하려고 크롬북을 직구했습니다.</td>
-                                </tr>
-                                <tr rowspan=""><td>보안/협업</td>
-                                    <td>인트라넷에서 공동 개발을 하고 싶어요.</td>
-                                </tr>
-                                <tr rowspan=""><td>One SDK</td>
-                                    <td>삼성 Smart TV가 Tizen 기반이라던데 하나의 SDK로 다 개발 가능하죠? 같은 회사의 OS니까요.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        -->
                     </div>
                 </section>
 
@@ -273,7 +256,7 @@
                             </ul>
                         </div>
                         <div class="sl-block fragment" style="top: 600px;">
-                            <p><span class="fragment">&ldquo;모든 곳의, 모든 이들을 위한 쉬운 <span class="highlight">웹 기반</span> Tizen App 개발 환경&rdquo;</span>
+                            <p><span class="">&ldquo;모든 곳의, 모든 이들을 위한 쉬운 <span class="highlight">웹 기반</span> Tizen App 개발 환경&rdquo;</span>
                         </div>
                     </section>
 
@@ -332,7 +315,7 @@
                 </section>
 
                 <section>
-                    <div class="sl-block toc" style="">
+                    <div class="sl-block toc inter" style="">
                         <h1>#Develop</h1>
                         <div class="story">
                             <!--
@@ -340,8 +323,8 @@
                             작년에 Webida를 개발했던<br>
                             게으른 미혼 개발자가 쉽게 오픈소스 커미터가 될 수 있는 이유
                             -->
-                            <h2>#Structure</h2>
-                            <h2>#Features</h2>
+                            <h2>#Tizen WSDK Structure</h2>
+                            <h2>#Tizen WSDK Features</h2>
                         </div>
                     </div>
                 </section>
@@ -392,7 +375,7 @@
                                 <li>Open Source (ASL v2)<br>
                                     <a href="https://github.com/webida">https://github.com/webida</a></li>
                                 <li>Plug-ins architecture</li>
-                                <li>Powerful content assist for JS</li>
+                                <li>Powerful content assist<br>for JavaScript</li>
                                 <!--li>Self-approving
                                     <a href="https://webida.org"><div style="line-height: 1.2;">Webida builds Webida</div>
                                     <div style="line-height: 1.2; padding-left: 117px;">using Webida</div></a></li-->
@@ -412,7 +395,7 @@
                             <li>Appplication supported
                                 <ul>
                                     <li>Tizen web app</li>
-                                    <li>HTML5 web app: We build Tizen WSDK using Tizen WSDK</li>
+                                    <li>HTML5 web app (e.g. Tizen WSDK)</li>
                                 </ul>
                             <li>Project Wizard, Import/Export Wizard</li>
                             <li>Editor
@@ -487,12 +470,12 @@
                 </section>
 
                 <section>
-                    <div class="sl-block toc" data-background="#4d7e65" style="">
+                    <div class="sl-block toc inter" data-background="#4d7e65" style="">
                         <h1>#Demo</h1>
-                        <div class="story">
+                        <div class="story right">
                             한국에서 Core-day가 열리는 오늘,<br>
                             자신의 삼성 디바이스를 가진 개발자가<br>
-                            Tizen 앱을 개발할 수 있는 이유
+                            Tizen 앱을 빠르게 개발할 수 있는 이유
                             <!-- b를 누르자 -->
                         </div>
                     </div>
@@ -538,7 +521,7 @@
                         <p><strong>Slide:</strong></p>
                         <p><span class="highlight"><strong>cimfalab.github.com/coreday</strong></span></p>
                         <p></p>
-                        <p><span style=""><strong>Alpha is coming soon:</strong></span></p>
+                        <p><span style=""><strong>Tizen WSDK Alpha is coming soon:</strong></span></p>
                         <p><span class="highlight"><strong>tizen.wsdk.io</strong></p>
                     </div>
                     <!--div class="sl-block" style="top: 454px;">
@@ -563,6 +546,7 @@
                 progress: true,
                 history: true,
                 center: false,
+                slideNumber: true,
                 //minScale: 1,
                 //maxScale: 1,
 

@@ -45,7 +45,7 @@
         .reveal .has-light-background .breadcrumb {
             color: #000;
         }
-        .reveal .breadcrumb .current {
+        .reveal .current {
             text-decoration: underline;
         }
 
@@ -62,13 +62,16 @@
         .reveal ul + img {
             margin-top: 10px;
         }
-        .reveal .today h2 {
+        .reveal .toc h2 {
+            top: 100px;
+        }
+        .reveal .toc h2 {
             text-align: left;
             margin-bottom: 30px;
             color: #e7ad52;
         }
         .reveal .story {
-            text-align: right;
+            text-align: left;
             margin-top: 120px;
             line-height: 2;
         }
@@ -106,6 +109,9 @@
         .reveal a.button,
         .reveal a:hover.button{
             color: #fff;
+        }
+        .reveal .comparison-table td {
+            font-size: 85%;
         }
         </style>
     </head>
@@ -164,20 +170,22 @@
                 </section>
 
                 <section>
-                    <div class="sl-block today" style="top: 150px;">
+                    <div class="sl-block toc" style="">
                         <h1>Today</h1>
-                        <h2>#Why (이야기의 시작은 이렇습니다)</h2>
-                        <h2>#Develop (이런 물건을 개발하고 있습니다)</h2>
-                        <h2>#Demo (그래서 대체 어떤 물건인가?)</h2>
+                        <div class="story">
+                            <h2>#Why (개발 배경)</h2>
+                            <h2>#Develop (구조 및 기능)</h2>
+                            <h2><strong>#Demo (물건)</strong></h2>
+                        </div>
                     </div>
                 </section>
 
                 <section>
-                    <div class="sl-block" style="top: 100px;">
+                    <div class="sl-block toc" style="">
                         <h1>#Why</h1>
                         <div class="story">
-                            중국에서 Tizen 컨퍼런스가 열리던 일요일,<br>
-                            자신의 삼성 디바이스를 가지고 해커톤에 참석하는 개발자가<br>
+                            <span class="current">중국</span>에서 Tizen 컨퍼런스가 열리던 <span class="current">일요일</span>,<br>
+                            자신의 <span class="current">삼성 디바이스</span>를 가지고 해커톤에 참석하는 개발자가<br>
                             Tizen 앱을 개발할 수 없는 이유
                         </div>
                     </div>
@@ -212,15 +220,16 @@
                         <ul>
                             <li>Download as bundle and support CDN</li>
                             <li>Automate the way to run with Samsung product device</li>
-                            <li>Listen to users</li>
+                            <!--li>Listen to users</li-->
                         </ul>
-                        <div class="fragment" style="margin-top: 20px; padding-left: 1em;">
-                        <span class="highlight" style="">But what if other developers are saying</span>
-                        <ul style="font-size: 90%;">
-                            <li>윈도우 계정이 "설치해 볼까"인데 SDK가 깔리지 않아요</li>
-                            <li>Tizen 앱을 개발하려고 크롬북을 직구했습니다 (응?)</li>
-                            <li>인트라넷에서 공동 개발을 하고 싶어요</li>
-                            <li>삼성 TV가 Tizen 기반이라던데 제가 사용했던 SDK로 개발하면 되죠?</li>
+                    </div>
+                    <div class="sl-block fragment" style="top: 340px;">
+                        <span class="highlight" style="">But what if other (potential) developers?</span>
+                        <ul style="">
+                            <!--li>윈도우 계정이 "설치해 볼까"인데 SDK가 깔리지 않아요</li-->
+                            <li>크롬북을 사용하는 미국의 교실에 있는 학생 개발자</li>
+                            <li>인트라넷에 팀 공용 개발 환경을 구축하려는 앱 개발사</li>
+                            <li>삼성 기어 S2와 삼성 Smart TV를 모두 갖고 있는 취미 개발자</li>
                         </ul>
                         <!--
                         <table>
@@ -243,158 +252,237 @@
                             </tbody>
                         </table>
                         -->
+                    </div>
+                </section>
+
+                <section>
+                    <section>
+                        <div class="breadcrumb">#Why > <span class="current">What should we do</span></div>
+                        <div class="sl-block" style="">
+                            <h2 class="">2. Create a new SDK on new platform</h2>
+                            <p>모든 곳의, 모든 이들을 위한 쉬운 Tizen App 개발 환경을 만들자</p>
                         </div>
-                    </div>
+                        <div class="sl-block fragment" style="top: 260px;">
+                            <span class="highlight">Based-on Web technology</span>
+                            <ul>
+                                <li>Just web browser needed on any device
+                                <li>Simply use the latest development environment
+                                <li>Rapid development and release
+                                <li>One SDK for all Tizen platforms
+                                <li>User behavior focused
+                            </ul>
+                        </div>
+                        <div class="sl-block fragment" style="top: 600px;">
+                            <p><span class="fragment">&ldquo;모든 곳의, 모든 이들을 위한 쉬운 <span class="highlight">웹 기반</span> Tizen App 개발 환경&rdquo;</span>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2></h2>
+                        <table class="comparison-table">
+                            <tr><th></th><th>User</th><th>Desktop SDK</th><th>Web-based SDK</th></tr>
+                            <tr><td rowspan="2">Time</td><td>First use</td><td><strong>1 Hour</strong>
+                                    <p>
+                                    Need to download 1 GB above package
+                                     </p>
+                                </td>
+                                <td><strong>5 Minutes</strong>
+                                    <p>
+                                    Zero Install
+                                    </p>
+                                </td></tr>
+                            <tr><td>Update</td><td><strong>XX Minutes</strong>
+                                    <p>
+                                    Need to download package
+                                    </p>
+                                </td><td><strong>Instantly</strong>
+                                    <p>
+                                    Always up-to-date
+                                    </p>
+                                </td></tr>
+                            <tr><td>Disk space</td><td></td><td><strong>~ 4 GB</strong>
+                                </td>
+                                <td><strong>0 ~ 0.02 GB</strong>
+                                </td></tr>
+                            <tr><td>Prerequisites</td><td></td><td><strong>Limited OS and versions</strong>
+                                    <!--
+                                    <p>
+                                    Ubuntu® 12.04 or 14.04<br>
+                                    Microsoft Windows® 7/8<br>
+                                    Apple Mac OS® X 10.8, 10.9
+                                    </p>
+                                    -->
+                                </td>
+                                <td><strong>Chrome browser on All OS</strong>
+                                </td></tr>
+                            <tr><td>Workspace</td><td></td><td><strong>Local</strong>
+                                    <p>
+                                    You're needed to install and import projects<br>
+                                    when you can't use your PC
+                                    </p>
+                                </td>
+                                <td><strong>Cloud</strong>
+                                    <p>
+                                    You can access your latest environment<br>
+                                    at anytime and from anywhere
+                                    </p>
+                                </td></tr>
+                        </table>
+                    </section>
                 </section>
 
                 <section>
-                    <div class="breadcrumb">#Why > <span class="current">What should we do</span></div>
-                    <div class="sl-block" style="">
-                        <h2 class="highlight">2. Create new SDK on new platform</h2>
-                        <ul>
-                            <li>Web-based
-                                <ul>
-                                    <li>Cross-platform support</li>
-                                    <li>Dog-fooding for HTML5 as application platform</li>
-                                </ul>
-                            <li>Server-based</li>
-                                <ul>
-                                    <li>Daily-updated</li>
-                                    <li>One SDK for all Tizen platforms</li>
-                                    <li>User behavior focused</li>
-                                </ul>
-                        </ul>
-                        <p style="margin-top: 30px;">
-                        <strong class="fragment highlight">&ldquo;모든 곳의, 모든 이들을 위한 쉬운 웹 기반 Tizen App 개발 환경</strong>
-                        </p>
-                    </div>
-                </section>
-
-                <section>
-                    <div class="sl-block" style="top: 100px;">
+                    <div class="sl-block toc" style="">
                         <h1>#Develop</h1>
                         <div class="story">
+                            <!--
                             재작년에 Tizen SDK를 개발하고,<br>
                             작년에 Webida를 개발했던<br>
                             게으른 미혼 개발자가 쉽게 오픈소스 커미터가 될 수 있는 이유
+                            -->
+                            <h2>#구조</h2>
+                            <h2>#기능</h2>
                         </div>
                     </div>
                 </section>
 
                 <section>
                     <div class="breadcrumb">#Develop > <span class="current">Requisites for Web-based IDE</span></div>
-                    <div class="sl-block" style="left: 340px;">
+                    <div class="sl-block">
                         <h2>IDE</h2>
-                        <table>
-                            <thead>
-                                <tr><th></th><th></th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td rowspan="2">Write</td>
-                                    <td>Project Managment</td>
-                                </tr>
-                                <tr><td>Code Editor</td>
-                                </tr>
-                                <tr><td rowspan="2">Run/Test</td>
-                                    <td>Launch</td>
-                                </tr>
-                                <tr><td>Device Management</td>
-                                </tr>
-                                <tr><td colspan="2" style="color: #add8e6;">Menu, View, Key, Team, Plug-ins, ...</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <br>
-                        <h2>Web-based IDE</h2>
                     </div>
-                    <div class="sl-block" style="width: 800px; left: -120px;">
-                        <img width="60%" data-src="tizen.png">
-                        <img width="60%" data-src="tile.png">
+                    <div class="sl-block" style="left: 660px; top: 160px;">
+                        <ul>
+                            <li>Project Managment</li>
+                            <li>Code Editor</li>
+                            <li>Launch</li>
+                            <li>Device Management</li>
+                            <li style="color: #add8e6;">Menu, View, Key, Team</li>
+                            <li style="color: #add8e6;">Plug-ins</li>
+                        </ul>
+                        <!--h2>Web-based IDE</h2-->
+                    </div>
+                    <div class="sl-block" style="left: -180px; top: 160px;">
+                        <img width="80%" data-src="tizen.png">
+                        <!--img width="60%" data-src="tile.png"-->
                     </div>
                 </section>
 
-                <section class="has-light-background" data-background-color="#ffffff">
-                    <div class="breadcrumb">#Develop > <span class="current">Webida</span></div>
-                    <div class="sl-block">
-                        <h2 style="margin-bottom: 0;"><strong>Webida</strong></h2>
-                        <h2>Web-based IDE</h2>
-                    </div>
-                    <div class="sl-block" style="left: 620px; top: 220px;">
-                        <ul>
-                            <li>Open Source (ASL v2)<br>
-                                <a href="https://github.com/webida">https://github.com/webida</a></li>
-                            <li>Plug-ins architecture</li>
-                            <li>Powerful content assist for JS</li>
-                            <li>Self-approving
-                                <a href="https://webida.org"><div style="line-height: 1.2;">Webida builds Webida</div>
-                                <div style="line-height: 1.2; padding-left: 117px;">using Webida</div></a></li>
-                        </ul>
-                    </div>
-                    <div class="sl-block" style="left: -180px; top: 240px;">
-                        <img style="width: 680px;" data-src="webida.png">
-                    </div>
+                <section>
+                    <section class="has-light-background present" data-background-color="#ffffff">
+                        <div class="breadcrumb">#Develop > <span class="current">Structure</span></div>
+                        <div class="sl-block" style="">
+                            <h2 style="margin-bottom: 0;"><strong>Structure</strong></h2>
+                            <h2 style="margin-bottom: 40px;">Extensions on Webida</h2>
+                            <img data-src="tizen_structure.png" style="margin-bottom: 20px;">
+                        </div>
+                    </section>
+
+                    <section class="has-light-background" data-background-color="#ffffff">
+                        <div class="breadcrumb">#Develop > <span class="current">Webida</span></div>
+                        <div class="sl-block">
+                            <h2 style="margin-bottom: 0;"><strong>Webida</strong></h2>
+                            <h2>Web-based IDE</h2>
+                        </div>
+                        <div class="sl-block" style="left: 620px; top: 240px;">
+                            <ul>
+                                <li>Open Source (ASL v2)<br>
+                                    <a href="https://github.com/webida">https://github.com/webida</a></li>
+                                <li>Plug-ins architecture</li>
+                                <li>Powerful content assist for JS</li>
+                                <!--li>Self-approving
+                                    <a href="https://webida.org"><div style="line-height: 1.2;">Webida builds Webida</div>
+                                    <div style="line-height: 1.2; padding-left: 117px;">using Webida</div></a></li-->
+                            </ul>
+                        </div>
+                        <div class="sl-block" style="left: -180px; top: 240px;">
+                            <img style="width: 680px;" data-src="webida.png">
+                        </div>
+                    </section>
                 </section>
 
                 <section class="has-light-background present" data-background-color="#ffffff">
-                    <div class="breadcrumb">#Develop > <span class="current">Structure</span></div>
+                    <div class="breadcrumb">#Develop > <span class="current">Features</span></div>
                     <div class="sl-block" style="">
-                        <h2 style="margin-bottom: 0;"><strong>Structure</strong></h2>
-                        <h2 style="margin-bottom: 40px;">Extensions on Webida</h2>
-                        <img data-src="tizen_structure.png" style="margin-bottom: 20px;">
-                        <!--
-                        <table>
-                            <thead>
-                                <tr><th></th><th></th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td rowspan="1">Write</td>
-                                    <td>Project Wizard, Manifest Editor, Content Assist, ...</td>
-                                </tr>
-                                <tr><td rowspan="1">Run/Test</td>
-                                    <td>Run/Debug, Packaging, Device, ...</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        -->
+                        <h2>Features (1)</h2>
+                        <ul>
+                            <li>Appplication supported
+                                <ul>
+                                    <li>Tizen web app</li>
+                                    <li>HTML5 web app: We build Tizen WSDK using Tizen WSDK</li>
+                                </ul>
+                            <li>Project Wizard, Import/Export Wizard</li>
+                            <li>Editor
+                                <ul>
+                                    <li>UI-based editor for config.xml</li>
+                                    <li>Content assist for Tizen Device API</li>
+                                    <li>Privilege Checker</li>
+                                </ul>
+                        </ul>
                     </div>
                 </section>
 
                 <section class="has-light-background present" data-background-color="#ffffff">
                     <div class="breadcrumb">#Develop > <span class="current">Features</span></div>
                     <div class="sl-block" style="">
-                        <h2>Features</h2>
+                        <h2>Features (2)</h2>
                         <ul>
-                            <li>Appplication supported: Tizen web app and HTML5 web app</li>
-                            <li>Project Wizard, Import/Export Wizard</li>
-                            <li>Manifest Editor</li>
-                            <li>Content Assist for Tizen Device API, Privilege Checker</li>
-                            <li>Packaging (supporting Samsung Account)</li>
-                            <li>Launch with Web Simulator and Tizen target</li>
-                            <li>Multi-platform: Mobile 2.4.0/2.3.1/2.3.0, Wearable 2.3.1/2.3.0</li>
-                            <li>Server Monitoring, DIBS Deployment</li>
+                            <li>Packaging</li>
+                                <ul>
+                                    <li>Web application packaging</li>
+                                    <li>Key store management (Tizen and Samsung types)</li>
+                                </ul>
+                            <li>Launch
+                                <ul>
+                                    <li>Web Simulator</li>
+                                    <li>Tizen Emulator or device (broker module on PC needed)</li>
+                                </ul>
+                            <li>Multi-platform support
+                                <ul>
+                                    <li>Mobile 2.4.0/2.3.1/2.3.0</li>
+                                    <li>Wearable 2.3.1/2.3.0</li>
+                                </ul>
                         </ul>
-                    </div>
-                </section>
-
-                <section class="has-light-background present" data-background-color="#ffffff">
-                    <div class="breadcrumb">#Develop > <span class="current">Deployment</span></div>
-                    <div class="sl-block" style="">
-                        <h2>Service Model</h2>
-                        <ul style="margin-bottom: 20px;">
-                            <li class="highlight">Public Cloud Service</li>
-                            <li>Private cloud: private use after setting once locally</li>
-                            <li>Private device: wherever you go with your device</li>
-                        </ul>
-                        <img data-src="deploy1.png" style="width: 460px;" alt="Private cloud"><img data-src="deploy2.png" style="width: 460px; margin-left: 20px;" alt="BYOD">
                     </div>
                 </section>
 
                 <section>
-                    <div class="sl-block" data-background="#4d7e65" style="top: 100px;">
+                    <section class="has-light-background present" data-background-color="#ffffff">
+                        <div class="breadcrumb">#Develop > <span class="current">Features</span></div>
+                        <div class="sl-block" style="">
+                            <h2>Features (3)</h2>
+                            <ul>
+                                <li>Dashboard</li>
+                                    <ul>
+                                        <li>Workspace management</li>
+                                        <li>User profile</li>
+                                    </ul>
+                                <li>Server Monitoring</li>
+                                <li>DIBS Deployment</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="has-light-background present" data-background-color="#ffffff">
+                        <div class="breadcrumb">#Develop > <span class="current">Deployment</span></div>
+                        <div class="sl-block" style="">
+                            <h2>Service Model</h2>
+                            <ul style="margin-bottom: 20px;">
+                                <li class="highlight">Public Cloud Service</li>
+                                <li>Private cloud: private use after setting once locally</li>
+                                <li>Private device: wherever you go with your device</li>
+                            </ul>
+                            <img data-src="deploy1.png" style="width: 460px;" alt="Private cloud"><img data-src="deploy2.png" style="width: 460px; margin-left: 20px;" alt="BYOD">
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <div class="sl-block toc" data-background="#4d7e65" style="">
                         <h1>#Demo</h1>
                         <div class="story">
                             한국에서 Core-day가 열리는 오늘,<br>
-                            자신의 삼성 디바이스를 손목에 찬 개발자가<br>
+                            자신의 삼성 디바이스를 가진 개발자가<br>
                             Tizen 앱을 개발할 수 있는 이유
                             <!-- b를 누르자 -->
                         </div>
@@ -404,14 +492,14 @@
                 <section style="text-align: left;">
                     <div class="breadcrumb"><span class="current">#Conclusion</span></div>
                     <div class="sl-block" style="">
-                        &ldquo;모든 곳의, 모든 이들을 위한 쉬운 웹 기반 Tizen App 개발 환경
-                        <p>
+                        모든 곳의, 모든 이들을 위한 쉬운 웹 기반 Tizen App 개발 환경
+                    </div>
+                    <div class="sl-block" style="top: 120px;">
                         <h2>One small step</h2>
                         <!-- 수많은 릴리즈를 거치고 풍부한 기능을 갖춘 기존 Tizen IDE보다 기능은 부족합니다. 하지만 나름의 가치가 있다고 생각합니다. -->
-                        <!--h2>Tizen Web-based SDK's value</h2-->
                         <ul style="margin-bottom: 20px;" class="highlight">
                             <li>브라우저만으로 가능한 Tizen Web App 개발 환경</li>
-                            <li>앱 플랫폼으로서의 웹 기술 검증, 오픈 소스 프로젝트와의 선순환</li>
+                            <!--li>앱 플랫폼으로서의 웹 기술 검증, 오픈 소스 프로젝트와의 선순환</li-->
                         </ul>
                         <h2>Next steps</h2>
                         <ul>
@@ -422,9 +510,8 @@
                             <li>Offline-enabled</li>
                             <li>IoT App</li>
                         </ul>
-                        </p>
                     </div>
-                    <div class="sl-block fragment" style="top: 380px; left: 360px;">
+                    <div class="sl-block fragment" style="top: 380px; left: 350px;">
                         <img width="60%" data-src="Tizen-Developer-Conference-2015-Shenzhen-China-Experts-347.jpg">
                     </div>
                 </section>
@@ -432,17 +519,22 @@
                 <section>
                     <div class="sl-block" style="top: 22px;">
                         <h1>Thank You!</h1>
+                        <h2>Q&A</h2>
                     </div>
-                    <div class="sl-block" style="top: 140px;">
+                    <div class="sl-block" style="top: 260px;">
                         <p><strong>Kim Kangho</strong></p>
                         <p>kh5325.kim@samsung.com</p>
                     </div>
-                    <div class="sl-block" style="top: 334px;">
-                        <p><span style="color: #00ffff;"><strong>Tizen Web-based SDK Alpha is coming soon</strong></span></p>
+                    <div class="sl-block" style="top: 440px;">
+                        <p><strong>Slide:</strong></p>
+                        <p><span class="highlight"><strong>cimfalab.github.com/coreday</strong></span></p>
+                        <p></p>
+                        <p><span style=""><strong>Alpha is coming soon:</strong></span></p>
+                        <p><span class="highlight"><strong>tizen.wsdk.io</strong></p>
                     </div>
-                    <div class="sl-block" style="top: 454px;">
+                    <!--div class="sl-block" style="top: 454px;">
                         <p><a href="https://github.com/webida" class="button">Start contributing to Webida</a></p>
-                    </div>
+                    </div-->
                 </section>
 
             </div>
